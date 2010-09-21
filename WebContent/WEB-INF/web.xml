@@ -7,7 +7,7 @@
     <param-value>http://w7-203-rob.hk.netdimensions.com/ekp62/</param-value>
   </context-param>
   <context-param>
-    <description>The key used to generate thr signature for the authentication response.</description>
+    <description>The key used to generate the signature for the authentication response.</description>
     <param-name>key</param-name>
     <param-value>9ee2652027b513b3baecc6416dba2a7b</param-value>
   </context-param>
