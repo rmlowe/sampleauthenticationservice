@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <display-name>sampleauthenticationservice</display-name>
+  <display-name>Sample Authentication Service</display-name>
+  <context-param>
+    <description>The base URL of the EKP installation.</description>
+    <param-name>ekpBase</param-name>
+    <param-value>http://w7-203-rob.hk.netdimensions.com/ekp62/</param-value>
+  </context-param>
+  <context-param>
+    <description>The key used to generate thr signature for the authentication response.</description>
+    <param-name>key</param-name>
+    <param-value>9ee2652027b513b3baecc6416dba2a7b</param-value>
+  </context-param>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -9,4 +19,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>SingleSignOnServlet</display-name>
+    <servlet-name>SingleSignOnServlet</servlet-name>
+    <servlet-class>SingleSignOnServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SingleSignOnServlet</servlet-name>
+    <url-pattern>/sso</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginHandlerServlet</display-name>
+    <servlet-name>LoginHandlerServlet</servlet-name>
+    <servlet-class>LoginHandlerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginHandlerServlet</servlet-name>
+    <url-pattern>/loginhandler</url-pattern>
+  </servlet-mapping>
 </web-app>
