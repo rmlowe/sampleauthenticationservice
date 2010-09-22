@@ -31,7 +31,7 @@
 	if (request.getAttribute("error") != null
 			&& ((Boolean) request.getAttribute("error")).booleanValue()) {
 %>
-<p class="error">The user ID or password you entered is incorrect.</p>
+<p style="color:red;">The user ID or password you entered is incorrect.</p>
 <%
 	}
 %>
