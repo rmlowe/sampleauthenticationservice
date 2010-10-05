@@ -40,15 +40,15 @@ public final class SingleSignOnServlet extends HttpServlet {
 				md.update(saltBytes);
 
 				// Trim the string since Commons Codec appends CRLF
-				final String encodeBase64String = Base64.encodeBase64String(
-						md.digest()).trim();
+				final String digest = Base64.encodeBase64String(md.digest())
+						.trim();
 
 				final String url = this.getServletContext().getInitParameter(
 						"ekpBase")
 						+ "servlet/ekp/authenticationTokenVerifier?userId="
 						+ URLEncoder.encode(userId, "UTF-8")
 						+ "&digest="
-						+ URLEncoder.encode(encodeBase64String, "UTF-8");
+						+ URLEncoder.encode(digest, "UTF-8");
 				response.sendRedirect(url);
 			} catch (final NoSuchAlgorithmException e) {
 				throw new AssertionError(
