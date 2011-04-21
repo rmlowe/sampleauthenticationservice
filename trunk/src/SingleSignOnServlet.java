@@ -13,9 +13,6 @@ import org.apache.commons.codec.binary.Base64;
 public final class SingleSignOnServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public SingleSignOnServlet() {
-	}
-
 	protected final void doGet(final HttpServletRequest request,
 			final HttpServletResponse response) throws IOException,
 			ServletException {
